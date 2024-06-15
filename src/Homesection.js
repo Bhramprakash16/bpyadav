@@ -1,0 +1,23 @@
+// src/Homesection.js
+import React from 'react';
+import './Homesection.css';
+
+const Homesection = () => {
+  return (
+    <section id="home" className="home">
+      <div className="home-content">
+        <h1>Hi, I'm Bhramprakash</h1>
+        <h3>Video Editor</h3>
+        <p>
+          I am a professional Video Editor specializing in creating and editing video content for various platforms. I have extensive experience in video production, including scripting, shooting, and post-production editing.
+        </p>
+        <div className="btn-box">
+          <a href="#">Hire Me</a>
+          <a href="#">Let's Talk</a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Homesection;

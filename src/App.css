@@ -1,0 +1,33 @@
+  /* src/App.css */
+  .App {
+    text-align: center;
+  }
+
+  #home, #about, #work, #services, #contact {
+    padding: 50px;
+    border-bottom: 1px solid #ccc;
+  }
+  /* Homesection.css */
+  .home {
+    background: url('backcover.png') no-repeat;
+    /* Other styles remain the same */
+  }
+  /* src/App.css */
+
+  .section {
+    padding: 100px 20px;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+  }
+
+  .section:nth-of-type(even) {
+    background-color: #e4e4e4;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }

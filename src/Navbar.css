@@ -1,0 +1,99 @@
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    position: sticky; /* Make the navbar sticky */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000;
+  }
+  
+  .navbar-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Hide My Website title by default */
+  .mobile-only {
+    display: none;
+  }
+  
+  .navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .navbar-toggle .toggle-icon {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+  }
+  
+  .navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar-menu a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navbar-menu a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Media Queries for Mobile Devices */
+  @media (max-width: 768px) {
+    .navbar-menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      background-color: #444;
+    }
+  
+    .navbar-menu.open {
+      display: flex;
+    }
+  
+    .navbar-toggle {
+      display: flex;
+    }
+  
+    .navbar-menu a {
+      padding: 10px;
+      border-bottom: 1px solid #555;
+    }
+  
+    .navbar-title {
+      font-size: 18px;
+    }
+  
+    /* Show My Website button on mobile devices */
+    .mobile-only {
+      display: inline;
+    }
+  }
+  
+  /* Ensure My Website button is hidden on larger screens */
+  @media (min-width: 769px) {
+    .mobile-only {
+      display: none;
+    }
+  }
+  
