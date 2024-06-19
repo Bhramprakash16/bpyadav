@@ -12,8 +12,8 @@ const Homesection = () => {
           I am a professional Video Editor specializing in creating and editing video content for various platforms. I have extensive experience in video production, including scripting, shooting, and post-production editing.
         </p>
         <div className="btn-box">
-          <a href="#">Hire Me</a>
-          <a href="#">Let's Talk</a>
+          <a href="#" className="btn">Hire Me</a>
+          <a href="#" className="btn">Let's Talk</a>
         </div>
       </div>
     </section>

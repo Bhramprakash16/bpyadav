@@ -6,20 +6,9 @@ const Contact = () => {
   return (
     <section id="contact" className="contact">
       <div className="contact-container">
-        <h2>Contact</h2>
-        <div className="contact-form">
-          <form action="#" method="post">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-          </form>
-        </div>
-
         <div className="container">
           <div className="row justify-content-center mb-5 pb-3">
             <div className="col-md-7 heading-section text-center">
-              <h1 className="big big-2">Contact</h1>
               <h2 className="mb-4">Contact Me</h2>
               <p>Below are the details to reach out to me!</p>
             </div>

@@ -1,69 +1,121 @@
-/* src/ServiceSection.css */
+/* ServiceSection.css */
+
+/* Section styling */
 .services {
-    background-color: #a1a1a1;
-    padding: 50px 0;
-    overflow-x: hidden; /* Prevent horizontal overflow */
-    text-align: center;
-  }
-  
-  .services h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  .services-scroll-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    padding-bottom: 20px;
-    gap: 20px; /* Gap between items */
-    scroll-snap-type: x mandatory; /* Smooth snap scrolling */
-  }
-  
-  .services-scroll-container::-webkit-scrollbar {
-    height: 8px; /* Height of the scrollbar */
-  }
-  
-  .services-scroll-container::-webkit-scrollbar-thumb {
-    background: #ccc; /* Color of the scrollbar */
-    border-radius: 4px; /* Rounded scrollbar */
-  }
-  
+  padding: 50px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+/* Header styling */
+.services h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Container for services */
+.services-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between service items */
+}
+
+/* Individual service item styling */
+.service-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-item.text-left .service-text {
+  order: 1;
+}
+
+.service-item.text-left .service-media {
+  order: 2;
+}
+
+.service-item.text-right .service-text {
+  order: 2;
+}
+
+.service-item.text-right .service-media {
+  order: 1;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Content inside the service item */
+.service-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.service-text {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+}
+
+.service-text h3 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.service-text p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.service-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.service-text ul li {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Media container */
+.service-media {
+  flex: 1;
+  padding: 20px;
+}
+
+.service-media img, .service-media video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Consistent shadow with images */
+}
+
+/* Styling video container */
+.video-container {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Consistent shadow with images */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
   .service-item {
-    flex: 0 0 auto; /* Flex item does not shrink or grow */
-    width: 400px; /* Set a fixed width for each item */
-    height: 600px;
-    text-align: left;
-    background-color: #c4c4c4;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    scroll-snap-align: center; /* Center each item on snap */
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .service-item img {
+
+  .service-text, .service-media {
+    padding: 10px;
     width: 100%;
-    border-radius: 5px;
-    margin-bottom: 10px;
   }
-  
-  .service-item h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .service-item p {
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-  
-  .service-item ul {
-    padding-left: 20px;
-    font-size: 16px;
-  }
-  
-  .service-item ul li {
-    margin-bottom: 5px;
-  }
-  
+}
