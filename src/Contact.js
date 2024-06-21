@@ -1,8 +1,38 @@
 // src/Contact.js
-import React from 'react';
+import React, { useState } from 'react';
 import './Contact.css';
 
 const Contact = () => {
+  const [result, setResult] = useState('');
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult('Sending....');
+    const formData = new FormData(event.target);
+
+    formData.append('access_key', '200996d2-b887-45ae-a7e6-729309ce687f');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult('Form Submitted Successfully');
+        event.target.reset();
+      } else {
+        console.log('Error', data);
+        setResult(data.message);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setResult('An error occurred. Please try again later.');
+    }
+  };
+
   return (
     <section id="contact" className="contact">
       <div className="contact-container">
@@ -15,20 +45,20 @@ const Contact = () => {
           </div>
 
           <div className="row d-flex contact-info mb-5">
-            <ContactBox 
-              icon="icon-map-signs" 
-              title="Address" 
-              content="Rewari, Haryana" 
+            <ContactBox
+              icon="icon-map-signs"
+              title="Address"
+              content="Rewari, Haryana"
             />
-            <ContactBox 
-              icon="icon-phone2" 
-              title="Contact Number" 
-              content={<a href="tel://8168036902">+91 8168036902</a>} 
+            <ContactBox
+              icon="icon-phone2"
+              title="Contact Number"
+              content={<a href="tel://8168036902">+91 8168036902</a>}
             />
-            <ContactBox 
-              icon="icon-paper-plane" 
-              title="Email Address" 
-              content={<a href="mailto:bhramprakshyadav16.com">bhramprakshyadav16@gmail.com</a>} 
+            <ContactBox
+              icon="icon-paper-plane"
+              title="Email Address"
+              content={<a href="mailto:bhramprakshyadav16@gmail.com">bhramprakshyadav16@gmail.com</a>}
             />
           </div>
 
@@ -36,38 +66,38 @@ const Contact = () => {
             <div className="col-md-7 text-center">
               <h2>Have a <span>Question?</span></h2>
               <div className="que" id="send-message">
-                <form action="https://api.web3forms.com/submit" method="POST">
-                  <input type="hidden" name="access_key" value="53850583-f0df-4410-b578-7dcc38204284" />
+                <form onSubmit={onSubmit}>
+                  <input type="hidden" name="access_key" value="200996d2-b887-45ae-a7e6-729309ce687f" />
                   <div className="row gy-4 p-4">
-                    <InputField 
-                      label="Full Name" 
-                      type="text" 
-                      name="fullname" 
-                      required={true} 
+                    <InputField
+                      label="Full Name"
+                      type="text"
+                      name="fullname"
+                      required={true}
                     />
-                    <InputField 
-                      label="Email" 
-                      type="email" 
-                      name="email" 
-                      required={true} 
-                      icon="bi-envelope" 
+                    <InputField
+                      label="Email"
+                      type="email"
+                      name="email"
+                      required={true}
+                      icon="bi-envelope"
                     />
-                    <InputField 
-                      label="Phone Number" 
-                      type="tel" 
-                      name="phone" 
-                      icon="bi-telephone" 
+                    <InputField
+                      label="Phone Number"
+                      type="tel"
+                      name="phone"
+                      icon="bi-telephone"
                     />
-                    <InputField 
-                      label="Subject" 
-                      type="text" 
-                      name="subject" 
-                      required={true} 
+                    <InputField
+                      label="Subject"
+                      type="text"
+                      name="subject"
+                      required={true}
                     />
-                    <TextareaField 
-                      label="Message" 
-                      name="message" 
-                      required={true} 
+                    <TextareaField
+                      label="Message"
+                      name="message"
+                      required={true}
                     />
                     <div className="col-12">
                       <div className="d-grid">
@@ -76,6 +106,7 @@ const Contact = () => {
                     </div>
                   </div>
                 </form>
+                <span>{result}</span>
               </div>
             </div>
           </div>
@@ -111,12 +142,12 @@ const InputField = ({ label, type, name, required, icon }) => (
           </svg>
         </span>
       )}
-      <input 
-        type={type} 
-        className="form-control" 
-        id={name} 
-        name={name} 
-        required={required} 
+      <input
+        type={type}
+        className="form-control"
+        id={name}
+        name={name}
+        required={required}
       />
     </div>
   </div>
@@ -128,12 +159,12 @@ const TextareaField = ({ label, name, required }) => (
       {label}
       {required && <span className="text-danger"> *</span>}
     </label>
-    <textarea 
-      className="form-control" 
-      id={name} 
-      name={name} 
-      rows="3" 
-      required={required} 
+    <textarea
+      className="form-control"
+      id={name}
+      name={name}
+      rows="3"
+      required={required}
     ></textarea>
   </div>
 );

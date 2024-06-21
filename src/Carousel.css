@@ -1,38 +1,39 @@
 /* src/Carousel.css */
 
 .carousel-container {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    top: 1px;
-    background-color: #3b3b3b;
-    
-  }
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  top: 1px;
+  background-color: #3b3b3b;
   
-  .carousel-container:hover .carousel-slide {
-    animation-play-state: paused;
+}
+
+.carousel-container:hover .carousel-slide {
+  animation-play-state: paused;
+}
+
+.carousel-slide {
+  height: 100%;
+  animation: 25s slide infinite linear;
+  display: inline-flex; /* Use inline-flex for horizontal layout */
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+}
+
+.carousel-slide img {
+  height: 300px;
+  object-fit: cover;
+  margin-right: 5px; /* Add margin between images if needed */
+  height: 200px;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
   }
-  
-  .carousel-slide {
-    height: 100%;
-    animation: 25s slide infinite linear;
-    display: inline-flex; /* Use inline-flex for horizontal layout */
-    transition: transform 0.5s ease-in-out;
+  to {
+    transform: translateX(-100%);
   }
-  
-  .carousel-slide img {
-    height: 300px;
-    object-fit: cover;
-    margin-right: 5px; /* Add margin between images if needed */
-  }
-  
-  @keyframes slide {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
-  
+}
