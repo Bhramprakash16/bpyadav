@@ -12,8 +12,8 @@ const Homesection = () => {
           I am a professional Video Editor specializing in creating and editing video content for various platforms. I have extensive experience in video production, including scripting, shooting, and post-production editing.
         </p>
         <div className="btn-box">
-          <a href="#" className="btn">Hire Me</a>
-          <a href="#" className="btn">Let's Talk</a>
+        <a href="mailto:bhramprakshyadav16@gmail,com.com" className="btn">Hire Me</a>
+        <a href="https://www.linkedin.com/in/bhramprakash-yadav/" target="_blank" rel="noopener noreferrer" className="btn">Let's Talk</a>
         </div>
       </div>
     </section>

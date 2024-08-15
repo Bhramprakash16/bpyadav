@@ -15,7 +15,7 @@ const Worksection = () => {
       title: 'Animations',
       description: 'These are some animation made by me in blender',
       image: process.env.PUBLIC_URL + '/3d.jpg',
-      link: 'https://drive.google.com/drive/folders/10hsZKEWcq8nzHGLMGL1yriZxm2rU8m9-',
+      link: 'https://drive.google.com/drive/folders/1wA-Jshxq_OuB7hSB4zN3ztZWL3g-HMjC?usp=drive_link',
     },
     {
       id: 3,
